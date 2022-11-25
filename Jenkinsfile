@@ -1,10 +1,13 @@
 pipeline {
-    agent any
-    stages {
-        stage('Test') {
-            steps {
-                sh 'java --version'
-            }
-        }
+  agent any
+  tools {
+    gradle 'Gradle'
+  }
+  stages {
+    stage('Test') {
+      steps {
+        sh 'gradle --version'
+      }
     }
+  }
 }
